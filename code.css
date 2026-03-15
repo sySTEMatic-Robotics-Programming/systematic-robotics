@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* code.css */
+@font-face {
+  font-family: "Magz";
+  src: url("font-family/Magz.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ── Competition Section ── */
+
+/* Photo on the RIGHT – diagonal cut on its left edge */
+.clip-photo-right {
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 8% 100%);
+}
+
+/* Photo on the LEFT – diagonal cut on its right edge */
+.clip-photo-left {
+  clip-path: polygon(0% 0%, 92% 0%, 82% 100%, 0% 100%);
+}
+
+/* Soft drop-shadow toward the content side */
+.shadow-photo-left {
+  filter: drop-shadow(-12px 0 24px rgba(0, 0, 0, 0.45));
+}
+.shadow-photo-right {
+  filter: drop-shadow(12px 0 24px rgba(0, 0, 0, 0.45));
+}
+
+/* Gradient text for "Competitions" heading */
+.comp-title {
+  background: linear-gradient(180deg, #ffffff 0%, #a855f7 50%, #6b21a8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

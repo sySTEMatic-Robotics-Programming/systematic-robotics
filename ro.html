@@ -1,0 +1,1769 @@
+<!doctype html>
+<html lang="ro" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sySTEMatic Robotics</title>
+    <meta
+      name="description"
+      content="sySTEMatic Robotics este o echipă de robotică cu peste 70 de membri de la Politehnica București, care concurează internațional în competiții de Sumo, Line Follower și Freestyle."
+    />
+    <meta name="robots" content="index, follow" />
+    <!-- <link rel="canonical" href="https://systeamtics-robotics.ro/ro.html" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://systeamtics-robotics.ro/"
+    />
+    <link
+      rel="alternate"
+      hreflang="ro"
+      href="https://systematics-robotics.ro/ro.html"
+    /> -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="sySTEMatic Robotics" />
+    <meta
+      property="og:description"
+      content="Peste 70 de studenți de la Politehnica București construiesc roboți premiați pentru competiții internaționale în China, Grecia, Japonia și România."
+    />
+    <!-- <meta property="og:url" content="https://systematics-robotics.ro/ro.html" /> -->
+    <!-- <meta
+      property="og:image"
+      content="https://systematics-robotics.ro/poze/sigla.png"
+    /> -->
+    <meta property="og:site_name" content="sySTEMatic Robotics" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sySTEMatic Robotics" />
+    <meta
+      name="twitter:description"
+      content="Peste 70 de studenți de la Politehnica București construiesc roboți premiați pentru competiții internaționale."
+    />
+    <!-- <meta
+      name="twitter:image"
+      content="https://systematics-robotics.ro/poze/sigla.png"
+    /> -->
+
+    <link rel="stylesheet" href="code.css" />
+    <link rel="icon" type="image/png" href="poze/sigla.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/tailwindcss">
+      @theme {
+        --font-robotics: "Magz", sans-serif;
+        --font-chakra: "Chakra Petch", sans-serif;
+      }
+    </style>
+
+    <!-- <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "sySTEMatic Robotics",
+        "url": "https://systematics-robotics.ro",
+        "logo": "https://systematics-robotics.ro/poze/sigla.png",
+        "description": "Echipă de robotică de la Facultatea de Inginerie Industrială și Robotică, Politehnica București, care concurează internațional din 2023.",
+        "foundingDate": "2023-11",
+        "email": "pr.systematic23@gmail.com",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61553168963681",
+          "https://www.instagram.com/systematic_robotics/",
+          "https://www.tiktok.com/@systematic_robotics",
+          "https://www.linkedin.com/company/systematic-robotics/"
+        ],
+        "memberOf": {
+          "@type": "EducationalOrganization",
+          "name": "National University of Science and Technology Politehnica Bucharest"
+        }
+      }
+    </script> -->
+
+    <script>
+      (function () {
+        var PREF_KEY = "preferredLang";
+        var currentLang = document.documentElement.lang;
+        var savedLang = localStorage.getItem(PREF_KEY);
+        if (savedLang && savedLang !== currentLang) {
+          var pages = { en: "index.html", ro: "ro.html" };
+          if (pages[savedLang]) window.location.replace(pages[savedLang]);
+        }
+      })();
+    </script>
+  </head>
+
+  <body class="bg-[rgba(14,2,31,1)] overflow-x-hidden">
+    <nav
+      class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-14 py-3 md:py-4 bg-[rgba(14,2,31,0.95)] backdrop-blur-md border-b border-white/10"
+    >
+      <a href="#">
+        <img src="poze/sigla.png" class="h-10 md:h-12 w-auto" />
+      </a>
+      <!-- Desktop nav links -->
+      <div
+        class="text-white font-chakra hidden lg:flex items-center justify-center gap-8"
+      >
+        <a
+          href="#about"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          Despre noi
+        </a>
+        <a
+          href="#team"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          Echipa
+        </a>
+        <a
+          href="#competition"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          Competiții
+        </a>
+        <a
+          href="#awards"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          Premii
+        </a>
+        <a
+          href="#tv"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          TV
+        </a>
+        <a
+          href="#join"
+          class="bg-[rgba(123,40,243,0.33)] py-2 px-5 rounded-2xl hover:bg-[rgba(123,40,243,0.6)] transition cursor-pointer"
+        >
+          Alătură-te
+        </a>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="text-white hidden lg:flex gap-2 items-center">
+          <a
+            href="index.html"
+            class="lang-btn flex items-center gap-1 hover:text-[rgba(242,245,34,1)] transition"
+            data-lang="en"
+            onclick="localStorage.setItem('preferredLang', 'en')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 640 480"
+            >
+              <path fill="#012169" d="M0 0h640v480H0z" />
+              <path
+                fill="#fff"
+                d="m75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301L81 480H0v-60l239-178L0 64V0z"
+              />
+              <path
+                fill="#c8102e"
+                d="m424 281l216 159v40L369 281zm-184 20l6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"
+              />
+              <path fill="#fff" d="M241 0v480h160V0zM0 160v160h640V160z" />
+              <path fill="#c8102e" d="M0 193v96h640v-96zM273 0v480h96V0z" />
+            </svg>
+            EN
+          </a>
+          <span class="text-white/40">|</span>
+          <a
+            href="ro.html"
+            class="lang-btn flex items-center gap-1 text-[rgba(242,245,34,1)] font-bold"
+            data-lang="ro"
+            onclick="localStorage.setItem('preferredLang', 'ro')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 640 480"
+            >
+              <g fill-rule="evenodd" stroke-width="1">
+                <path fill="#00319c" d="M0 0h213.3v480H0z" />
+                <path fill="#ffde00" d="M213.3 0h213.4v480H213.3z" />
+                <path fill="#de2110" d="M426.7 0H640v480H426.7z" />
+              </g>
+            </svg>
+            RO
+          </a>
+        </div>
+        <!-- Hamburger button (mobile only) -->
+        <button
+          id="hamburger-btn"
+          class="lg:hidden text-white focus:outline-none cursor-pointer"
+          onclick="
+            document.getElementById('mobile-menu').classList.toggle('hidden')
+          "
+        >
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-[57px] left-0 w-full z-40 bg-[rgba(14,2,31,0.98)] backdrop-blur-md border-b border-white/10 lg:hidden"
+    >
+      <div class="flex flex-col items-center gap-6 py-8 font-chakra text-lg">
+        <a
+          href="#about"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Despre noi</a
+        >
+        <a
+          href="#team"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Echipa</a
+        >
+        <a
+          href="#competition"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Competiții</a
+        >
+        <a
+          href="#awards"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Premii</a
+        >
+        <a
+          href="#tv"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >TV</a
+        >
+        <a
+          href="#join"
+          class="bg-[rgba(123,40,243,0.33)] py-2 px-8 rounded-2xl hover:bg-[rgba(123,40,243,0.6)] transition text-white"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Alătură-te</a
+        >
+        <div class="text-white flex gap-3 items-center mt-2">
+          <a
+            href="index.html"
+            class="lang-btn hover:text-[rgba(242,245,34,1)] transition"
+            data-lang="en"
+            onclick="localStorage.setItem('preferredLang', 'en')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 640 480"
+            >
+              <path fill="#012169" d="M0 0h640v480H0z" />
+              <path
+                fill="#fff"
+                d="m75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301L81 480H0v-60l239-178L0 64V0z"
+              />
+              <path
+                fill="#c8102e"
+                d="m424 281l216 159v40L369 281zm-184 20l6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"
+              />
+              <path fill="#fff" d="M241 0v480h160V0zM0 160v160h640V160z" />
+              <path fill="#c8102e" d="M0 193v96h640v-96zM273 0v480h96V0z" />
+            </svg>
+            EN
+          </a>
+          <span class="text-white/40">|</span>
+          <a
+            href="ro.html"
+            class="lang-btn text-[rgba(242,245,34,1)] font-bold"
+            data-lang="ro"
+            onclick="localStorage.setItem('preferredLang', 'ro')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              viewBox="0 0 640 480"
+            >
+              <g fill-rule="evenodd" stroke-width="1">
+                <path fill="#00319c" d="M0 0h213.3v480H0z" />
+                <path fill="#ffde00" d="M213.3 0h213.4v480H213.3z" />
+                <path fill="#de2110" d="M426.7 0H640v480H426.7z" />
+              </g>
+            </svg>
+            RO
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative w-full h-screen">
+      <img
+        src="poze/Rectangle1.png"
+        class="w-full h-full"
+        alt="Background Image"
+      />
+
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1
+          class="absolute font-robotics text-5xl md:text-7xl lg:text-9xl text-center flex flex-col items-center leading-none"
+        >
+          <span class="text-[rgba(255,255,255,1)]">Magie reala</span>
+          <span class="text-[rgba(145,67,255,1)]">reimaginata</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="h-16 md:h-32"></div>
+
+    <section id="about" class="scroll-mt-28">
+      <div class="flex flex-col items-center justify-center px-4 md:px-8">
+        <h2
+          class="font-robotics flex flex-row items-center justify-center gap-2 text-4xl md:text-6xl lg:text-7xl"
+        >
+          <span class="text-[rgba(255,255,255,1)]">Despre</span>
+          <span class="text-[rgba(242,245,34,1)]">noi</span>
+        </h2>
+        <p
+          class="text-white mt-6 text-center max-w-6xl w-full mb-10 md:mb-20 text-sm md:text-base"
+        >
+          Fondată în noiembrie 2023 sub numele „RoboFIIR" și evoluând în
+          sySTEMatic Robotics, suntem o echipă de peste 70 de studenți de la
+          Facultatea de Inginerie Industrială și Robotică din cadrul
+          Universității Naționale de Știință și Tehnologie Politehnica
+          București. Uniți de pasiunea pentru inovație, membrii noștri tehnici
+          și non-tehnici colaborează pentru a proiecta, construi și programa
+          roboți complet integrați — de la arhitectura mecanică și sistemele
+          embedded la controlul autonom și software de strategie în timp real —
+          pentru cercetare aplicată și inginerie competițională pe scene
+          internaționale, inclusiv Grecia, China și Japonia. Fie că concurăm în
+          Sumo, Line Follower sau Freestyle, misiunea noastră este de a pune
+          România pe harta globală a roboticii prin excelență inginerească și
+          spirit de echipă. Ne dezvoltăm prin provocări din lumea reală care ne
+          scot din zona de confort, ne testează ideile și ne forțează să ne
+          adaptăm la orice situație.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-25 px-4 md:px-8 max-w-7xl mx-auto"
+      >
+        <div class="flex items-start w-full md:w-1/2 shrink-0">
+          <img
+            src="poze/poza-goals2.png"
+            class="w-full h-auto rounded-2xl"
+            alt="Goals Image"
+          />
+        </div>
+
+        <div
+          class="flex flex-col items-start p-8 md:p-16 rounded-[40px] bg-cover bg-center bg-no-repeat"
+          style="
+            background-image: url(&quot;poze/chenar-goals.png&quot;);
+            min-height: 300px;
+          "
+        >
+          <div class="mb-6">
+            <h2
+              class="font-robotics flex flex-row gap-4 text-4xl md:text-5xl lg:text-5xl uppercase italic tracking-tight"
+            >
+              <span class="text-white">Obiectivele</span>
+              <span class="text-[rgba(242,245,34,1)]">noastre</span>
+            </h2>
+          </div>
+
+          <div class="flex flex-col items-start gap-3">
+            <p
+              class="text-white font-chakra text-base md:text-lg lg:text-xl flex items-start"
+            >
+              <span class="mr-3 text-[#f2f522] mt-1.5 text-xs">&#9679;</span>
+              Dezvoltarea de proiecte de robotică inovatoare, conduse de
+              studenți
+            </p>
+            <p
+              class="text-white font-chakra text-base md:text-lg lg:text-xl flex items-start"
+            >
+              <span class="mr-3 text-[#f2f522] mt-1.5 text-xs">&#9679;</span>
+              Încurajarea învățării practice și a creșterii tehnice
+            </p>
+            <p
+              class="text-white font-chakra text-base md:text-lg lg:text-xl flex items-start"
+            >
+              <span class="mr-3 text-[#f2f522] mt-1.5 text-xs">&#9679;</span>
+              Promovarea muncii în echipă în inginerie, programare și design
+            </p>
+            <p
+              class="text-white font-chakra text-base md:text-lg lg:text-xl flex items-start"
+            >
+              <span class="mr-3 text-[#f2f522] mt-1.5 text-xs">&#9679;</span>
+              Stimularea creativității, colaborării și rezolvării problemelor
+            </p>
+            <p
+              class="text-white font-chakra text-base md:text-lg lg:text-xl flex items-start"
+            >
+              <span class="mr-3 text-[#f2f522] mt-1.5 text-xs">&#9679;</span>
+              Pregătirea membrilor pentru cariere viitoare în tehnologie și
+              inginerie
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-20 md:h-50"></div>
+
+    <section id="team" class="scroll-mt-28">
+      <div
+        class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
+      >
+        <h1
+          class="font-robotics flex flex-row items-center justify-center gap-3 text-4xl md:text-6xl lg:text-8xl"
+        >
+          <span class="text-[rgba(242,245,34,1)]">Echipa de</span>
+          <span class="text-[rgba(255,255,255,1)]">conducere</span>
+        </h1>
+        <p
+          class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
+        >
+          Echipa de conducere ghidează direcția SySTEMatic Robotics. Ei
+          coordonează proiectele, sprijină membrii și asigură colaborarea,
+          inovația și creșterea în toate departamentele.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-20 lg:px-40"
+      >
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/ana-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Ana-Maria"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Lider de echipa
+            </p>
+            <p class="text-lg">Ana-Maria</p>
+            <p class="text-sm">ACSINTE</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/mario-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Andrei-Mario"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Mentor
+            </p>
+            <p class="text-lg">Andrei-Mario</p>
+            <p class="text-sm">IVAN</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/elipsa-teamleader.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Denisa-Stefania"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Secretar
+            </p>
+            <p class="text-lg">Denisa-Stefania</p>
+            <p class="text-sm">COSTACHE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-20 md:h-80"></div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
+      >
+        <h1
+          class="font-robotics flex flex-row items-center justify-center gap-3 text-3xl md:text-5xl lg:text-6xl"
+        >
+          <span class="text-[rgba(242,245,34,1)]">Departamentul</span>
+          <span class="text-[rgba(255,255,255,1)]">tehnic</span>
+        </h1>
+        <p
+          class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
+        >
+          Departamentul tehnic conduce eforturile echipei de
+          <span class="text-[rgba(242,245,34,1)]"
+            >inginerie, programare și CAD/CAE.</span
+          >
+          Ei dezvoltă soluții inovatoare, transformă ideile în proiecte
+          funcționale și se asigură că fiecare creație respectă standarde
+          tehnice înalte.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 lg:gap-20 px-6 md:px-20 lg:px-40"
+      >
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/poste-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Andrei"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Mecanic <span class="text-white">lead</span>
+            </p>
+            <p class="text-lg">Andrei</p>
+            <p class="text-sm">POSTELNICU</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/gabi-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Gabriel"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Programare <span class="text-white">lead</span>
+            </p>
+            <p class="text-lg">Gabriel</p>
+            <p class="text-sm">GEORGESCU</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/raresc-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Rares"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              CAD<span class="text-white">&#47;</span>CAE
+              <span class="text-white">lead</span>
+            </p>
+            <p class="text-lg">Rares</p>
+            <p class="text-sm">CIRJA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-20 md:h-80"></div>
+
+      <div
+        class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
+      >
+        <h1
+          class="font-robotics flex flex-row items-center justify-center gap-3 text-3xl md:text-5xl lg:text-6xl text-center"
+        >
+          <span class="text-[rgba(242,245,34,1)]"
+            ><span class="text-white">non</span>Tehnic</span
+          >
+          <span class="text-[rgba(255,255,255,1)]">departament</span>
+        </h1>
+        <p
+          class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
+        >
+          Departamentul non-tehnic sprijină echipa prin
+          <span class="text-[rgba(242,245,34,1)]">
+            comunicare, planificarea evenimentelor și design creativ.</span
+          >Ei se asigură că viziunea noastră ajunge la comunitate și
+          consolidează prezența echipei atât online, cât și offline.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 px-6 md:px-20 lg:px-40"
+      >
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/elipsa-teamleader.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Denisa-Stefania"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              PR <span class="text-white">lead</span>
+            </p>
+            <p class="text-lg">Alexandru-Gabriel</p>
+            <p class="text-sm">TUDORICA</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4">
+          <img
+            src="poze/sara-elipsa.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            alt="Sara-Cozma"
+          />
+
+          <div
+            class="text-white font-chakra flex flex-col items-center justify-center"
+          >
+            <p
+              class="text-[rgba(120,55,213,1)] font-robotics text-2xl md:text-4xl"
+            >
+              Design <span class="text-white">lead</span>
+            </p>
+            <p class="text-lg">Sara-Cozma</p>
+            <p class="text-sm">ZAHARIA</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-20 md:h-60"></div>
+
+    <section id="competition" class="scroll-mt-28">
+      <div class="flex flex-col items-center justify-center gap-4 px-4 md:px-8">
+        <h2 class="font-robotics text-white text-4xl md:text-6xl lg:text-8xl">
+          Competitii
+        </h2>
+        <div
+          class="flex flex-col items-center justify-center gap-3 text-center"
+        >
+          <p class="font-chakra text-[rgba(242,245,34,1)] text-sm md:text-base">
+            Creativitatea, munca în echipă și abilitățile noastre de rezolvare a
+            problemelor sunt puse la încercare în fiecare proiect pe care îl
+            întreprindem.
+          </p>
+          <p class="font-chakra text-white text-sm md:text-base">
+            Provocările sunt abordate cu entuziasm, motivându-ne să inovăm, să
+            lucrăm eficient și să transformăm ideile îndrăznețe în realizări
+            reale.
+          </p>
+        </div>
+      </div>
+
+      <div class="hidden md:flex flex-col mt-6">
+        <div class="relative flex items-stretch min-h-[35vh] bg-gray-100">
+          <div
+            class="flex-none w-[15vw] ml-[3vw] flex items-center justify-center px-[1.5vw] py-[2vh] z-10"
+          >
+            <img
+              src="poze/competitions/robotchallange/logo-china.png"
+              alt="RobotChallenge Logo"
+              class="w-full object-contain drop-shadow-xl"
+            />
+          </div>
+          <div
+            class="flex-1 flex items-center justify-center px-[2vw] py-[2vh] mr-12"
+          >
+            <div class="text-right flex flex-col items-end">
+              <h3
+                class="font-chakra font-bold text-[clamp(1.4rem,2.5vw,2.25rem)] uppercase tracking-wide text-gray-900 leading-tight"
+              >
+                ROBOTCHALLENGE
+              </h3>
+              <p
+                class="font-chakra text-[clamp(1.1rem,2vw,1.875rem)] text-gray-700 font-medium mb-[1vh]"
+              >
+                – China
+              </p>
+              <div
+                class="font-chakra text-[clamp(0.75rem,1vw,1rem)] text-gray-700 font-semibold leading-relaxed text-right"
+              >
+                <p>cu cati robo am participat</p>
+                <p>in ce ani ne am dus maybe</p>
+                <p>la ce categorii am participat</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-none w-[40vw]"></div>
+          <div class="absolute -top-[1vh] -bottom-[1vh] right-0 w-[50vw] z-20">
+            <img
+              src="poze/competitions/robotchallange/poza-china.png"
+              alt="RobotChallenge China"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="relative flex items-stretch min-h-[35vh] bg-[#1e0544]">
+          <div class="flex-none w-[45vw] order-1"></div>
+          <div
+            class="absolute -top-[0.5vh] -bottom-[1.5vh] left-0 w-[45vw] z-20"
+          >
+            <img
+              src="poze/competitions/robochallange/poza-robochallange.png"
+              alt="RoboChallenge Bucharest"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 flex flex-col items-start justify-center text-left px-[2vw] py-[2vh] z-10 order-2"
+          >
+            <div>
+              <h3
+                class="font-chakra font-bold text-[clamp(1.4rem,2.5vw,2.25rem)] uppercase tracking-wide text-white leading-tight"
+              >
+                ROBOCHALLENGE
+              </h3>
+              <p
+                class="font-chakra text-[clamp(1.1rem,2vw,1.875rem)] font-medium text-white/90 mb-[1vh]"
+              >
+                – București, România
+              </p>
+              <div
+                class="font-chakra text-[clamp(0.75rem,1vw,1rem)] text-white/90 leading-relaxed"
+              >
+                <p>cu cati robo am participat</p>
+                <p>in ce ani ne am dus maybe</p>
+                <p>la ce categorii am participat</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex-none mr-[2vw] w-[25vw] flex items-center justify-center px-[1.5vw] py-[2vh] z-10 order-3"
+          >
+            <img
+              src="poze/competitions/robochallange/logo-robochallange.png"
+              alt="RoboChallenge logos"
+              class="w-full object-contain drop-shadow-2xl"
+            />
+          </div>
+        </div>
+
+        <div class="relative flex items-stretch min-h-[35vh] bg-gray-100">
+          <div
+            class="flex-none w-[18vw] ml-[3vw] flex items-center justify-center px-[1.5vw] py-[2vh] z-10"
+          >
+            <img
+              src="poze/competitions/greece/logo-greece.png"
+              alt="Minoan MRC Logo"
+              class="w-full object-contain drop-shadow-xl"
+            />
+          </div>
+          <div
+            class="flex-1 flex flex-col items-start justify-center text-left px-[2vw] py-[2vh] z-10"
+          >
+            <h3
+              class="font-chakra font-bold text-[clamp(1.4rem,2.5vw,2.25rem)] uppercase tracking-wide text-gray-900"
+            >
+              MINOAN ROBOTSPORTS COMPETITION
+            </h3>
+            <p
+              class="font-chakra text-[clamp(1.1rem,2vw,1.875rem)] text-gray-700 font-medium mb-[1vh]"
+            >
+              – Grecia
+            </p>
+            <div
+              class="font-chakra text-[clamp(0.75rem,1vw,1rem)] text-gray-700 font-semibold leading-relaxed"
+            >
+              <p>cu cati robo am participat</p>
+              <p>in ce ani ne am dus maybe</p>
+              <p>la ce categorii am participat</p>
+            </div>
+          </div>
+          <div class="flex-none w-[38vw]"></div>
+          <div
+            class="absolute -top-[1vh] -bottom-[1.5vh] right-0 w-[40vw] z-20"
+          >
+            <img
+              src="poze/competitions/greece/poza-greece.png"
+              alt="Minoan Greece"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex md:hidden flex-col gap-6 mt-6 px-4">
+        <div class="rounded-2xl overflow-hidden bg-gray-100">
+          <img
+            src="poze/competitions/robotchallange/robotchallange.png"
+            alt="RobotChallenge China"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5 flex flex-col items-center gap-3">
+            <img
+              src="poze/competitions/robotchallange/logo-china.png"
+              alt="RobotChallenge Logo"
+              class="h-16 object-contain"
+            />
+            <h3
+              class="font-chakra font-bold text-xl uppercase text-gray-900 text-center"
+            >
+              ROBOTCHALLENGE – China
+            </h3>
+            <div class="font-chakra text-sm text-gray-700 text-center">
+              <p>cu cati robo am participat</p>
+              <p>in ce ani ne am dus maybe</p>
+              <p>la ce categorii am participat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-[#1e0544]">
+          <img
+            src="poze/competitions/robochallange/robochallange.png"
+            alt="RoboChallenge Bucharest"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5 flex flex-col items-center gap-3">
+            <img
+              src="poze/competitions/robochallange/logo-robochallange.png"
+              alt="RoboChallenge logos"
+              class="h-16 object-contain"
+            />
+            <h3
+              class="font-chakra font-bold text-xl uppercase text-white text-center"
+            >
+              ROBOCHALLENGE – București
+            </h3>
+            <div class="font-chakra text-sm text-white/90 text-center">
+              <p>cu cati robo am participat</p>
+              <p>in ce ani ne am dus maybe</p>
+              <p>la ce categorii am participat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden bg-gray-100">
+          <img
+            src="poze/competitions/greece/greece.png"
+            alt="Minoan Greece"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5 flex flex-col items-center gap-3">
+            <img
+              src="poze/competitions/greece/logo-greece.png"
+              alt="Minoan MRC Logo"
+              class="h-16 object-contain"
+            />
+            <h3
+              class="font-chakra font-bold text-xl uppercase text-gray-900 text-center"
+            >
+              MINOAN ROBOTSPORTS – Grecia
+            </h3>
+            <div class="font-chakra text-sm text-gray-700 text-center">
+              <p>cu cati robo am participat</p>
+              <p>in ce ani ne am dus maybe</p>
+              <p>la ce categorii am participat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-20 md:h-60"></div>
+
+    <section id="awards" class="scroll-mt-28">
+      <div class="flex flex-col items-center justify-center gap-4 px-4 md:px-8">
+        <h2 class="font-robotics text-white text-4xl md:text-6xl lg:text-8xl">
+          Premii
+        </h2>
+        <div
+          class="flex flex-col items-center justify-center gap-3 text-center"
+        >
+          <p class="font-chakra text-[rgba(242,245,34,1)] text-sm md:text-base">
+            Fiecare premiu evidențiază dedicarea, munca în echipă și
+            creativitatea noastră.
+          </p>
+          <p class="font-chakra text-white text-sm md:text-base">
+            Din <span class="text-[rgba(242,245,34,1)]">2023</span>, SySTEMatic
+            Robotics a acumulat realizări, a depășit limite și a demonstrat
+            impactul inovației conduse de studenți.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+      >
+        <div>
+          <img
+            src="poze/awards-robochallenge.png"
+            alt="Robochallenge Awards"
+            class="max-w-full"
+          />
+        </div>
+        <div
+          class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-2xl"
+        >
+          <p class="font-chakra text-white text-xl md:text-3xl lg:text-4xl">
+            <span class="text-[#f2f522] font-bold">ROBOCHALLENGE</span> -
+            Bucharest, Romania
+          </p>
+          <div
+            class="text-white font-chakra mt-4 md:mt-6 flex flex-col gap-2 md:gap-3 text-sm md:text-lg"
+          >
+            <p>&#8226; 1 × Locul I (Categoria: Humanoid Sumo)</p>
+            <p>&#8226; 1 × Locul II (Categoria: Humanoid Robot – Triathlon)</p>
+            <p>&#8226; 1 × Locul III (Categoria: Humanoid Sumo)</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+      >
+        <div
+          class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-3xl"
+        >
+          <p class="font-chakra text-white text-xl md:text-3xl lg:text-4xl">
+            <span class="text-[#f2f522] font-bold">ROBOTCHALLENGE</span> -
+            Beijing, China
+          </p>
+          <div
+            class="text-white font-chakra mt-4 md:mt-6 flex flex-col gap-2 md:gap-3 text-sm md:text-lg"
+          >
+            <p>
+              &#8226; 2x Locul II / Silver Award (Categoriile: Freestyle,
+              Automatic Humanoid Sumo)
+            </p>
+            <p>&#8226; 1x Locul III / Bronze Award (Categoria: Freestyle)</p>
+            <p>
+              &#8226; 2x Mentiune 1 (Categoriile: Automatic Humanoid Sumo, Mini
+              Sumo)
+            </p>
+            <p>
+              &#8226; 5x Mentiune 2 (Categoriile: Mini Sumo x2, Mega Sumo, Line
+              Follower, Micro Sumo)
+            </p>
+            <p>
+              &#8226; 3x Mentiune 3 (Categoriile: Micro Sumo, Mini Sumo, Line
+              Follower)
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="poze/robotchallenge 1.png"
+            alt="Robotchallenge China"
+            class="max-w-full"
+          />
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4"
+      >
+        <div>
+          <img
+            src="poze/minoan2.png"
+            alt="Minoan Robotsports Awards"
+            class="block max-w-full"
+          />
+        </div>
+        <div
+          class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-2xl"
+        >
+          <p class="font-chakra text-white text-xl md:text-3xl lg:text-4xl">
+            <span class="text-[#f2f522] font-bold"
+              >MINOAN ROBOTSPORTS COMPETITION</span
+            >
+            - Greece
+          </p>
+          <div
+            class="text-white font-chakra mt-4 md:mt-6 flex flex-col gap-2 md:gap-3 text-sm md:text-lg"
+          >
+            <p>
+              &#8226; 3 × Locul I (Categorii: Mini Wrestling, Micro Wrestling,
+              Exhibition)
+            </p>
+            <p>
+              &#8226; 2 × Locul II (Categorii: Micro Wrestling, Humanoid
+              Wrestling)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+      >
+        <div
+          class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-3xl"
+        >
+          <p class="font-chakra text-white text-xl md:text-3xl lg:text-4xl">
+            <span class="text-[#f2f522] font-bold">RELATIVITY CHALLENGE</span> -
+            Buzau, Romania
+          </p>
+          <div
+            class="text-white font-chakra mt-4 md:mt-6 flex flex-col gap-2 md:gap-3 text-sm md:text-lg"
+          >
+            <p>
+              &#8226; 2x Locul II / Silver Award (Categoriile: Freestyle,
+              Automatic Humanoid Sumo)
+            </p>
+            <p>&#8226; 1x Locul III / Bronze Award (Categoria: Freestyle)</p>
+            <p>
+              &#8226; 2x Mentiune 1 (Categoriile: Automatic Humanoid Sumo, Mini
+              Sumo)
+            </p>
+            <p>
+              &#8226; 5x Mentiune 2 (Categoriile: Mini Sumo x2, Mega Sumo, Line
+              Follower, Micro Sumo)
+            </p>
+            <p>
+              &#8226; 3x Mentiune 3 (Categoriile: Micro Sumo, Mini Sumo, Line
+              Follower)
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="poze/relativity.png"
+            alt="Relativity Challenge"
+            class="max-w-full"
+          />
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+      >
+        <div>
+          <img
+            src="poze/oradea.png"
+            alt="Robotics Championship Awards"
+            class="max-w-full"
+          />
+        </div>
+        <div
+          class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-2xl"
+        >
+          <p class="font-chakra text-white text-xl md:text-3xl lg:text-4xl">
+            <span class="text-[#f2f522] font-bold">ROBOTICS CHAMPIONSHIP</span>
+            - Oradea, Romania
+          </p>
+          <div
+            class="text-white font-chakra mt-4 md:mt-6 flex flex-col gap-2 md:gap-3 text-sm md:text-lg"
+          >
+            <p>
+              &#8226; 2 × Locul I (Categorii: Mini Sumo, Line Follower – Drag
+              Race)
+            </p>
+            <p>&#8226; 2 × Locul II (Categorii: Mini Sumo, Humanoid Sumo)</p>
+            <p>&#8226; 1 × Locul III (Categoria: Mega Sumo)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-20 md:h-80"></div>
+    <section id="tv" class="scroll-mt-28">
+      <div
+        class="flex flex-col items-center justify-center gap-3 sm:gap-5 mb-12 sm:mb-20 px-4"
+      >
+        <h1
+          class="font-robotics flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-4xl sm:text-6xl text-center"
+        >
+          <span class="text-[rgba(242,245,34,1)]">APARITII</span>
+          <span class="text-[rgba(255,255,255,1)]">TV</span>
+        </h1>
+      </div>
+
+      <div
+        class="flex flex-wrap justify-center gap-x-24 gap-y-16 sm:gap-y-20 max-w-[1800px] mx-auto px-4 sm:px-10"
+      >
+        <div
+          class="group relative w-full max-w-[550px] border-4 sm:border-[5px] border-[#9137E1] bg-[#491596] rounded-4xl sm:rounded-[2.5rem] flex flex-col shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(145,55,225,0.4)] ml-6 sm:ml-0 mt-4 sm:mt-0 cursor-pointer"
+        >
+          <div
+            class="h-[220px] sm:h-[280px] w-full rounded-t-[1.8rem] sm:rounded-t-[2.2rem] overflow-hidden"
+          >
+            <img
+              src="poze/tv/neata.png"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              alt="TV Show Cover"
+            />
+          </div>
+          <div
+            class="absolute left-0 top-[80%] -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-xl z-10 overflow-hidden transition-transform duration-300"
+          >
+            <img
+              src="poze/vorbeste-nou.png"
+              class="w-full h-full object-cover"
+              alt="Vorbește Lumea Logo"
+            />
+          </div>
+          <div class="flex flex-col px-6 sm:px-10 py-8 sm:py-10 pl-16 sm:pl-32">
+            <div class="w-full text-left mb-3 sm:mb-4">
+              <p
+                class="font-chakra text-[rgba(242,245,34,1)] text-xl sm:text-2xl font-bold mb-1"
+              >
+                Roboții din 2025
+              </p>
+              <p
+                class="font-chakra text-[rgba(255,255,255,1)] text-base sm:text-lg"
+              >
+                Pro TV
+              </p>
+            </div>
+            <p
+              class="font-chakra text-[rgba(255,255,255,1)] text-sm sm:text-base text-center leading-relaxed"
+            >
+              În cadrul emisiunii «Vorbește Lumea», am avut ocazia de a prezenta
+              viziunea sySTEMatic Robotics unui public larg. Am discutat despre
+              provocările competițiilor internaționale, am realizat demonstrații
+              live cu roboții noștri premiați și am împărtășit informații din
+              experiența noastră din China, unde soluțiile noastre tehnice au
+              fost recunoscute la cel mai înalt nivel.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group relative w-full max-w-[550px] border-4 sm:border-[5px] border-[#9137E1] bg-[#491596] rounded-4xl sm:rounded-[2.5rem] flex flex-col shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(145,55,225,0.4)] ml-6 sm:ml-0 mt-4 sm:mt-0 cursor-pointer"
+        >
+          <div
+            class="h-[220px] sm:h-[280px] w-full rounded-t-[1.8rem] sm:rounded-t-[2.2rem] overflow-hidden"
+          >
+            <img
+              src="poze/tv/neata.png"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              alt="TV Show Cover"
+            />
+          </div>
+          <div
+            class="absolute left-0 top-[80%] -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-xl z-10 overflow-hidden transition-transform duration-300"
+          >
+            <img
+              src="poze/cnn-nou.png"
+              class="w-full h-full object-cover"
+              alt="Antena 3 CNN Logo"
+            />
+          </div>
+          <div class="flex flex-col px-6 sm:px-10 py-8 sm:py-10 pl-16 sm:pl-32">
+            <div class="w-full text-left mb-3 sm:mb-4">
+              <p
+                class="font-chakra text-[rgba(242,245,34,1)] text-xl sm:text-2xl font-bold mb-1"
+              >
+                Roboții din 2025
+              </p>
+              <p
+                class="font-chakra text-[rgba(255,255,255,1)] text-base sm:text-lg"
+              >
+                Antena 3 CNN
+              </p>
+            </div>
+            <p
+              class="font-chakra text-[rgba(255,255,255,1)] text-sm sm:text-base text-center leading-relaxed"
+            >
+              Realizările noastre au fost recunoscute la nivel național când am
+              fost invitați la ediția specială de Ziua Națională difuzată pe 1
+              decembrie de Antena 3 CNN. Am demonstrat capacitățile roboților
+              noștri premiați și am reafirmat angajamentul de a reprezenta
+              România cu onoare, anunțând oficial participarea la prestigioasa
+              competiție din Japonia.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group relative w-full max-w-[550px] border-4 sm:border-[5px] border-[#9137E1] bg-[#491596] rounded-4xl sm:rounded-[2.5rem] flex flex-col shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(145,55,225,0.4)] ml-6 sm:ml-0 mt-4 sm:mt-0 cursor-pointer"
+        >
+          <div
+            class="h-[220px] sm:h-[280px] w-full rounded-t-[1.8rem] sm:rounded-t-[2.2rem] overflow-hidden"
+          >
+            <img
+              src="poze/tv/neata.png"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              alt="TV Show Cover"
+            />
+          </div>
+          <div
+            class="absolute left-0 top-[80%] -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] rounded-full border-[#C026D3] bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-xl z-10 overflow-hidden transition-transform duration-300"
+          >
+            <img
+              src="poze/IlikeIT-nou.png"
+              class="w-full h-full object-cover"
+              alt="I Like IT Logo"
+            />
+          </div>
+          <div class="flex flex-col px-6 sm:px-10 py-8 sm:py-10 pl-16 sm:pl-32">
+            <div class="w-full text-left mb-3 sm:mb-4">
+              <p
+                class="font-chakra text-[rgba(242,245,34,1)] text-xl sm:text-2xl font-bold mb-1"
+              >
+                Roboții din 2025
+              </p>
+              <p
+                class="font-chakra text-[rgba(255,255,255,1)] text-base sm:text-lg"
+              >
+                I Like IT
+              </p>
+            </div>
+            <p
+              class="font-chakra text-[rgba(255,255,255,1)] text-sm sm:text-base text-center leading-relaxed"
+            >
+              Pasiunea noastră pentru tehnologie ne-a adus în studioul
+              «iLikeIT», unde am explicat unui public mai larg cum funcționează
+              roboții industriali. Echipa noastră a prezentat aplicațiile
+              practice ale acestor sisteme, demonstrând cum ingineria dezvoltată
+              la Politehnica se traduce în soluții tangibile pentru viitor.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group relative w-full max-w-[550px] border-4 sm:border-[5px] border-[#9137E1] bg-[#491596] rounded-4xl sm:rounded-[2.5rem] flex flex-col shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(145,55,225,0.4)] ml-6 sm:ml-0 mt-4 sm:mt-0 cursor-pointer"
+        >
+          <div
+            class="h-[220px] sm:h-[280px] w-full rounded-t-[1.8rem] sm:rounded-t-[2.2rem] overflow-hidden"
+          >
+            <img
+              src="poze/tv/neata.png"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              alt="TV Show Cover"
+            />
+          </div>
+          <div
+            class="absolute left-0 top-[80%] -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] rounded-full border-[#C026D3] bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-xl z-10 overflow-hidden transition-transform duration-300"
+          >
+            <img
+              src="poze/digi-nou.png"
+              class="w-full h-full object-cover"
+              alt="Digi 24 Logo"
+            />
+          </div>
+          <div class="flex flex-col px-6 sm:px-10 py-8 sm:py-10 pl-16 sm:pl-32">
+            <div class="w-full text-left mb-3 sm:mb-4">
+              <p
+                class="font-chakra text-[rgba(242,245,34,1)] text-xl sm:text-2xl font-bold mb-1"
+              >
+                Roboții din 2025
+              </p>
+              <p
+                class="font-chakra text-[rgba(255,255,255,1)] text-base sm:text-lg"
+              >
+                Digi 24
+              </p>
+            </div>
+            <p
+              class="font-chakra text-[rgba(255,255,255,1)] text-sm sm:text-base text-center leading-relaxed"
+            >
+              Pasiunea noastră pentru tehnologie ne-a adus în studioul
+              «iLikeIT», unde am explicat unui public mai larg cum funcționează
+              roboții industriali. Echipa noastră a prezentat aplicațiile
+              practice ale acestor sisteme, demonstrând cum ingineria dezvoltată
+              la Politehnica se traduce în soluții tangibile pentru viitor.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group relative w-full max-w-[550px] border-4 sm:border-[5px] border-[#9137E1] bg-[#491596] rounded-4xl sm:rounded-[2.5rem] flex flex-col shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(145,55,225,0.4)] ml-6 sm:ml-0 mt-4 sm:mt-0 cursor-pointer"
+        >
+          <div
+            class="h-[220px] sm:h-[280px] w-full rounded-t-4xl sm:rounded-t-[2.2rem] overflow-hidden"
+          >
+            <img
+              src="poze/tv/neata.png"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              alt="TV Show Cover"
+            />
+          </div>
+          <div
+            class="absolute left-0 top-[80%] -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[180px] sm:h-[180px] rounded-full bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500 flex items-center justify-center shadow-xl z-10 overflow-hidden transition-transform duration-300"
+          >
+            <img
+              src="poze/neata.png"
+              class="w-full h-full object-cover"
+              alt="Neata Logo"
+            />
+          </div>
+          <div class="flex flex-col px-6 sm:px-10 py-8 sm:py-10 pl-16 sm:pl-32">
+            <div class="w-full text-left mb-3 sm:mb-4">
+              <p
+                class="font-chakra text-[rgba(242,245,34,1)] text-xl sm:text-2xl font-bold mb-1"
+              >
+                Roboții din 2025
+              </p>
+              <p
+                class="font-chakra text-[rgba(255,255,255,1)] text-base sm:text-lg"
+              >
+                Neatza cu Răzvan și Dani
+              </p>
+            </div>
+            <p
+              class="font-chakra text-[rgba(255,255,255,1)] text-sm sm:text-base text-center leading-relaxed"
+            >
+              Am avut plăcerea de a găzdui echipa «Neatza cu Răzvan și Dani»
+              direct în laboratoarele facultății noastre. A fost o oportunitate
+              unică de a oferi o privire din culise asupra procesului complex de
+              construire a unui robot, de la proiectare la execuție, și de a
+              discuta aplicațiile lor din lumea reală.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="scroll-mt-28">
+      <div
+        class="w-full max-w-3xl mx-auto p-1 bg-[rgba(14,2,31,1)] mt-20 md:mt-60 px-4 md:px-0"
+      >
+        <div
+          class="border-2 border-[rgba(145,67,255,1)] rounded-3xl p-6 md:p-12 flex flex-col items-center"
+        >
+          <h2
+            class="font-robotics text-4xl md:text-6xl lg:text-7xl font-normal mb-2 uppercase italic tracking-wide"
+          >
+            <span class="text-white">Alatura-te</span>
+            <span class="text-[rgba(242,245,34,1)]">noua</span>
+          </h2>
+          <p
+            class="font-chakra text-white text-center mb-10 text-sm md:text-base"
+          >
+            Introdu datele tale și te vom contacta cu
+            <span class="text-[rgba(242,245,34,1)] font-bold"
+              >formularul de recrutare.</span
+            >
+          </p>
+          <form
+            action="https://formsubmit.co/tudoricaalexandru1907@gmail.com"
+            method="POST"
+            class="w-full flex flex-col gap-5 font-chakra"
+          >
+            <input type="hidden" name="_subject" value="Aplicație Nouă" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <input
+                type="text"
+                name="Prenume"
+                placeholder="Prenume*"
+                required
+                class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <input
+                type="text"
+                name="Nume"
+                placeholder="Nume*"
+                required
+                class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+            <input
+              type="phone"
+              name="phone"
+              placeholder="Număr de telefon"
+              required
+              class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="e-mail*"
+              required
+              class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <input
+              type="text"
+              name="universitate"
+              placeholder="Universitatea și domeniul*"
+              required
+              class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+            />
+
+            <div class="relative">
+              <select
+                name="departament"
+                required
+                class="w-full bg-gray-300 p-4 rounded-md text-black font-bold appearance-none outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer"
+              >
+                <option value="" disabled selected>Alege departamentul*</option>
+                <option value="Mechanics">Mecanică</option>
+                <option value="Programming">Programare</option>
+                <option value="CAD / CAE">CAD / CAE</option>
+                <option value="PR">PR</option>
+                <option value="Design">Design</option>
+              </select>
+
+              <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black"
+              >
+                <svg
+                  class="fill-current h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="flex justify-center mt-6">
+              <button
+                type="submit"
+                class="bg-[rgba(242,245,34,1)] text-black font-bold py-3 px-16 rounded-3xl hover:bg-yellow-500 transition shadow-lg text-lg font-chakra uppercase cursor-pointer"
+              >
+                Trimite
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-40"></div>
+
+    <section id="powered" class="scroll-mt-28 px-4 md:px-20 lg:px-32 mb-20">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-16">
+        <div
+          class="flex flex-col items-center lg:items-start gap-10 w-full lg:w-auto"
+        >
+          <h2
+            class="font-robotics text-5xl md:text-6xl uppercase italic tracking-wide"
+          >
+            <span class="text-white">sustinuti</span>
+            <span class="text-[rgba(242,245,34,1)]"> de</span>
+          </h2>
+
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 gap-8 place-items-center md:relative md:block md:w-[500px] md:h-[340px] lg:w-[560px] lg:h-[380px]"
+          >
+            <div class="md:absolute md:left-0 md:top-2.5 lg:left-0 lg:top-2.5">
+              <div
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full border-[3px] border-[rgba(145,67,255,1)] overflow-hidden bg-white flex items-center justify-center p-1 hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(145,67,255,0.4)]"
+              >
+                <img
+                  src="poze/powered/politehnica.png"
+                  alt="Politehnica"
+                  class="w-full h-full object-contain rounded-full"
+                />
+              </div>
+            </div>
+
+            <div
+              class="md:absolute md:left-[145px] md:top-[55px] lg:left-[175px] lg:top-[65px]"
+            >
+              <div
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full border-[3px] border-[rgba(242,245,34,1)] overflow-hidden bg-white flex items-center justify-center p-1 hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(242,245,34,0.4)]"
+              >
+                <img
+                  src="poze/powered/fiir.png"
+                  alt="FIIR"
+                  class="w-full h-full object-contain rounded-full"
+                />
+              </div>
+            </div>
+
+            <div
+              class="md:absolute md:left-[300px] md:top-[5px] lg:left-[355px] lg:top-[5px]"
+            >
+              <div
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full border-[3px] border-[rgba(145,67,255,1)] overflow-hidden bg-white flex items-center justify-center p-1 hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_rgba(145,67,255,0.4)]"
+              >
+                <img
+                  src="poze/powered/kardynal.png"
+                  alt="Kardynal"
+                  class="w-full h-full object-contain rounded-full"
+                />
+              </div>
+            </div>
+
+            <div
+              class="md:absolute md:left-0 md:top-[170px] lg:left-0 lg:top-[195px]"
+            >
+              <img
+                src="poze/powered/catalyst.png"
+                alt="Catalyst"
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+
+            <div
+              class="md:absolute md:left-[145px] md:top-[215px] lg:left-[175px] lg:top-[245px]"
+            >
+              <img
+                src="poze/powered/devtalks.png"
+                alt="DevTalks"
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+
+            <div
+              class="md:absolute md:left-[300px] md:top-[170px] lg:left-[355px] lg:top-[195px]"
+            >
+              <img
+                src="poze/powered/hipo.png"
+                alt="Hipo"
+                class="w-24 h-24 md:w-32 md:h-32 lg:w-36 lg:h-36 object-contain hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full max-w-3xl flex-1">
+          <div
+            class="border-2 border-[rgba(145,67,255,1)] rounded-3xl p-8 md:p-10 flex flex-col items-center bg-[rgba(14,2,31,0.8)] shadow-[0_0_30px_rgba(145,67,255,0.15)]"
+          >
+            <h2
+              class="font-robotics text-5xl md:text-6xl font-normal mb-8 uppercase italic tracking-wide text-center"
+            >
+              <span class="text-white">devino</span>
+              <span class="text-[rgba(242,245,34,1)]"> partener</span>
+            </h2>
+
+            <form
+              action="https://formsubmit.co/tudoricaalexandru1907@gmail.com"
+              method="POST"
+              class="w-full flex flex-col gap-4 font-chakra"
+            >
+              <input type="hidden" name="_subject" value="Parteneriat Nou" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <input
+                type="text"
+                name="company"
+                placeholder="Numele companiei / organizației*"
+                required
+                class="w-full bg-gray-300 p-3.5 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+
+              <input
+                type="text"
+                name="contact_person"
+                placeholder="Persoana de contact*"
+                required
+                class="w-full bg-gray-300 p-3.5 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="E-mail*"
+                required
+                class="w-full bg-gray-300 p-3.5 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Număr de telefon"
+                class="w-full bg-gray-300 p-3.5 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Mesaj"
+                rows="3"
+                class="w-full bg-gray-300 p-3.5 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+              ></textarea>
+
+              <div class="flex justify-center mt-4">
+                <button
+                  type="submit"
+                  class="bg-[rgba(242,245,34,1)] text-black font-bold py-3 px-16 rounded-3xl hover:bg-yellow-500 transition shadow-lg text-lg font-chakra uppercase cursor-pointer"
+                >
+                  Trimite
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-20"></div>
+
+    <div
+      class="flex flex-col md:flex-row items-center md:items-start justify-between w-full p-5 px-6 md:px-10 gap-10 md:gap-5"
+    >
+      <div class="md:hidden flex justify-center">
+        <img
+          src="icons/sigla-systematic.png"
+          alt="Systematic Logo"
+          class="max-w-[200px]"
+        />
+      </div>
+
+      <div class="flex flex-col gap-4 md:gap-6 items-center md:items-start">
+        <a
+          href="https://www.facebook.com/profile.php?id=61553168963681&mibextid=wwXIfr&rdid=D90S8XgZEMzfiHvz&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1ENsZmbkct%2F%3Fmibextid%3DwwXIfr#"
+          target="_blank"
+          class="flex flex-row items-center justify-start gap-3"
+        >
+          <div>
+            <img src="icons/facebook.png" alt="Facebook Icon" />
+          </div>
+          <div>
+            <p
+              class="text-white hover:text-[rgba(242,245,34,1)] font-chakra text-base md:text-lg"
+            >
+              FACEBOOK
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://www.instagram.com/systematic_robotics/"
+          target="_blank"
+          class="flex flex-row items-center justify-start gap-3"
+        >
+          <div>
+            <img src="icons/instagram.png" alt="Instagram Icon" />
+          </div>
+          <div>
+            <p
+              class="text-white hover:text-[rgba(242,245,34,1)] font-chakra text-base md:text-lg"
+            >
+              INSTAGRAM
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://www.tiktok.com/@systematic_robotics"
+          target="_blank"
+          class="flex flex-row items-center justify-start gap-3"
+        >
+          <div>
+            <img src="icons/tiktok.png" alt="TikTok Icon" />
+          </div>
+          <div>
+            <p
+              class="text-white hover:text-[rgba(242,245,34,1)] font-chakra text-base md:text-lg"
+            >
+              TikTok
+            </p>
+          </div>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/systematic-robotics/"
+          target="_blank"
+          class="flex flex-row items-center justify-start gap-3"
+        >
+          <div>
+            <img src="icons/linkedIn.png" alt="LinkedIn Icon" />
+          </div>
+          <div>
+            <p
+              class="text-white hover:text-[rgba(242,245,34,1)] font-chakra text-base md:text-lg"
+            >
+              LinkedIn
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="hidden md:flex justify-center">
+        <img
+          src="icons/sigla-systematic.png"
+          alt="Systematic Logo"
+          class="max-w-[200px] hover:scale-120 transition-transform duration-300"
+        />
+      </div>
+
+      <div class="flex flex-col items-center md:items-start gap-4">
+        <div>
+          <p class="text-white font-chakra text-lg md:text-xl">CONTACTE</p>
+        </div>
+        <a href="tel:+40753433894" class="flex flex-row items-center gap-3">
+          <div>
+            <img src="icons/telephone.png" alt="Telephone Icon" />
+          </div>
+          <div class="font-chakra">
+            <p
+              class="text-[rgba(242,245,34,1)] hover:text-amber-300 text-sm md:text-base"
+            >
+              (+40) 753 433 894-
+              <span class="text-white">Ana-Maria ACSINTE</span>
+            </p>
+          </div>
+        </a>
+
+        <a href="tel:+40724021088" class="flex flex-row items-center gap-3">
+          <div>
+            <img src="icons/telephone.png" alt="Telephone Icon" />
+          </div>
+          <div class="font-chakra">
+            <p
+              class="text-[rgba(242,245,34,1)] hover:text-amber-300 text-sm md:text-base"
+            >
+              (+40) 724 021 088-
+              <span class="text-white">Andrei-Mario IVAN</span>
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="mailto:pr.systematic23@gmail.com?subject=Am%20o%20intrebare!"
+          class="flex flex-row items-center gap-3"
+        >
+          <div class="shrink-0">
+            <img src="icons/mail.png" alt="Mail Icon" />
+          </div>
+          <div class="overflow-hidden">
+            <p
+              class="font-chakra text-[rgba(242,245,34,1)] hover:text-amber-300 hover:underline text-sm md:text-base whitespace-nowrap"
+            >
+              pr.systematic23@gmail.com
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
