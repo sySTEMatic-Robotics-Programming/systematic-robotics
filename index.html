@@ -62,6 +62,16 @@
         --font-chakra: "Chakra Petch", sans-serif;
       }
     </style>
+    <style>
+      .is-active-section {
+        color: rgba(242, 245, 34, 1) !important;
+        font-weight: 700;
+      }
+
+      .is-active-pill {
+        background-color: rgba(123, 40, 243, 0.65) !important;
+      }
+    </style>
 
     <!-- <script type="application/ld+json">
       {
@@ -86,17 +96,7 @@
       }
     </script> -->
 
-    <script>
-      (function () {
-        var PREF_KEY = "preferredLang";
-        var currentLang = document.documentElement.lang;
-        var savedLang = localStorage.getItem(PREF_KEY);
-        if (savedLang && savedLang !== currentLang) {
-          var pages = { en: "index.html", ro: "ro.html" };
-          if (pages[savedLang]) window.location.replace(pages[savedLang]);
-        }
-      })();
-    </script>
+    <script src="js/site.js"></script>
   </head>
 
   <body class="bg-[rgba(14,2,31,1)] overflow-x-hidden">
@@ -152,7 +152,6 @@
             href="index.html"
             class="lang-btn flex items-center gap-1 text-[rgba(242,245,34,1)] font-bold"
             data-lang="en"
-            onclick="localStorage.setItem('preferredLang', 'en')"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +177,6 @@
             href="ro.html"
             class="lang-btn flex items-center gap-1 hover:text-[rgba(242,245,34,1)] transition"
             data-lang="ro"
-            onclick="localStorage.setItem('preferredLang', 'ro')"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +274,6 @@
             href="index.html"
             class="lang-btn text-[rgba(242,245,34,1)] font-bold"
             data-lang="en"
-            onclick="localStorage.setItem('preferredLang', 'en')"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -302,7 +299,6 @@
             href="ro.html"
             class="lang-btn hover:text-[rgba(242,245,34,1)] transition"
             data-lang="ro"
-            onclick="localStorage.setItem('preferredLang', 'ro')"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -927,7 +923,7 @@
       </div>
 
       <div
-        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
       >
         <div>
           <img
@@ -956,7 +952,7 @@
       </div>
 
       <div
-        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
       >
         <div
           class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-3xl"
@@ -997,7 +993,7 @@
       </div>
 
       <div
-        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4"
+        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4"
       >
         <div>
           <img
@@ -1031,7 +1027,7 @@
       </div>
 
       <div
-        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
       >
         <div
           class="bg-[#1a0b3b] border-2 border-[#7837d5] rounded-[20px] md:rounded-[40px] p-6 md:p-10 flex flex-col max-w-3xl"
@@ -1072,7 +1068,7 @@
       </div>
 
       <div
-        class="flex flex-col-reverse md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
+        class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 md:px-5"
       >
         <div>
           <img
