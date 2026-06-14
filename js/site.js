@@ -33,12 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getCurrentSectionId() {
     if (!sections.length) return null;
-
-    // Detection line must match where anchored sections land. Sections use
-    // scroll-mt-28 (scroll-margin-top: 112px), so an anchor click parks the
-    // section top 112px below the viewport top. Read that value live and add a
-    // small buffer so the target counts as active the instant it lands (the
-    // final smooth-scroll event can fire a few px short).
     var smt = parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 112;
     var line = smt + 16;
     var currentId = sections[0].id;
@@ -49,8 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Bottom-of-page guard: a short final section can never reach the line, so
-    // pin it active once the page is scrolled to the very bottom.
     if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
       currentId = sections[sections.length - 1].id;
     }
