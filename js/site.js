@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
     return sectionMap[id];
   });
 
+  sections.sort(function (a, b) {
+    return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING
+      ? -1
+      : 1;
+  });
+
   function setActiveSection(sectionId) {
     navLinks.forEach(function (link) {
       var href = link.getAttribute("href");
@@ -142,4 +148,85 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
   });
+});
+
+function sponsMax(ca, profit) {
+  var tax = profit * 0.16;
+  return Math.max(0, Math.min(ca * 0.0075, tax * 0.2));
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("spons-form");
+  if (!form) return;
+
+  var caEl = document.getElementById("spons-ca");
+  var profitEl = document.getElementById("spons-profit");
+  var btn = document.getElementById("spons-btn");
+  var resultEl = document.getElementById("spons-result");
+  var amountEl = document.getElementById("spons-amount");
+  var detailEl = document.getElementById("spons-detail");
+
+  var en = document.documentElement.lang === "en";
+  var locale = en ? "en-US" : "ro-RO";
+  var unit = en ? " RON" : " lei";
+  var live = false;
+
+  function fmt(n) {
+    return n.toLocaleString(locale, { maximumFractionDigits: 2 }) + unit;
+  }
+
+  function num(el) {
+    return el.value.trim() === "" ? NaN : parseFloat(el.value);
+  }
+
+  function valid() {
+    return !isNaN(num(caEl)) && !isNaN(num(profitEl));
+  }
+
+  function refreshBtn() {
+    btn.disabled = !valid();
+  }
+
+  function calc() {
+    var ca = num(caEl) || 0;
+    var profit = num(profitEl) || 0;
+    var tax = profit * 0.16;
+    amountEl.textContent = fmt(sponsMax(ca, profit));
+    detailEl.innerHTML = en
+      ? "0.75% of turnover = <b>" +
+        fmt(ca * 0.0075) +
+        "</b><br>20% of profit tax (16% × profit = " +
+        fmt(tax) +
+        ") = <b>" +
+        fmt(tax * 0.2) +
+        "</b><br>You can direct the smaller of the two."
+      : "0,75% din cifra de afaceri = <b>" +
+        fmt(ca * 0.0075) +
+        "</b><br>20% din impozitul pe profit (16% × profit = " +
+        fmt(tax) +
+        ") = <b>" +
+        fmt(tax * 0.2) +
+        "</b><br>Poți direcționa minimul dintre cele două.";
+    resultEl.classList.remove("hidden");
+  }
+
+  [caEl, profitEl].forEach(function (el) {
+    el.addEventListener("input", function () {
+      refreshBtn();
+      if (!valid()) {
+        resultEl.classList.add("hidden");
+      } else if (live) {
+        calc();
+      }
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!valid()) return;
+    live = true;
+    calc();
+  });
+
+  refreshBtn();
 });

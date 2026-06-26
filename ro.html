@@ -141,6 +141,12 @@
           TV
         </a>
         <a
+          href="#sponsorizare"
+          class="hover:text-[rgba(242,245,34,1)] transition cursor-pointer"
+        >
+          Sponsorizare
+        </a>
+        <a
           href="#join"
           class="bg-[rgba(123,40,243,0.33)] py-2 px-5 rounded-2xl hover:bg-[rgba(123,40,243,0.6)] transition cursor-pointer"
         >
@@ -263,6 +269,14 @@
             document.getElementById('mobile-menu').classList.add('hidden')
           "
           >TV</a
+        >
+        <a
+          href="#sponsorizare"
+          class="text-white hover:text-[rgba(242,245,34,1)] transition"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+          >Sponsorizare</a
         >
         <a
           href="#join"
@@ -459,7 +473,7 @@
       >
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/ana-elipsa.png"
+            src="poze/echipa/ana.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Ana-Maria"
           />
@@ -479,8 +493,8 @@
 
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/mario-elipsa.png"
-            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
+            src="poze/echipa/mario.png"
+            class="max-w-[207px] md:max-w-[253px] lg:max-w-[322px]"
             alt="Andrei-Mario"
           />
 
@@ -499,7 +513,7 @@
 
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/denisa.png"
+            src="poze/echipa/denisa.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Denisa-Stefania"
           />
@@ -547,7 +561,7 @@
       >
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/poste-elipsa.png"
+            src="poze/echipa/poste.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Andrei"
           />
@@ -567,7 +581,7 @@
 
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/gabi-elipsa.png"
+            src="poze/echipa/gabi.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Gabriel"
           />
@@ -587,7 +601,7 @@
 
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/rares-elipsa.png"
+            src="poze/echipa/rares.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Rares"
           />
@@ -636,8 +650,8 @@
       >
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/alex.png"
-            class="w-[180px] h-[180px] md:w-[220px] md:h-[220px] lg:w-[280px] lg:h-[280px] object-cover rounded-full"
+            src="poze/echipa/alex.png"
+            class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Alexandru-Gabriel"
           />
 
@@ -656,7 +670,7 @@
 
         <div class="flex flex-col items-center justify-center gap-4">
           <img
-            src="poze/sara-elipsa.png"
+            src="poze/echipa/sara.png"
             class="max-w-[180px] md:max-w-[220px] lg:max-w-[280px]"
             alt="Sara-Cozma"
           />
@@ -1937,6 +1951,84 @@
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="h-40"></div>
+
+    <section id="sponsorizare" class="scroll-mt-28 px-4 md:px-20 lg:px-32 mb-20">
+      <div class="w-full max-w-3xl mx-auto">
+        <h2
+          class="font-robotics text-5xl md:text-6xl font-normal mb-4 uppercase italic tracking-wide text-center"
+        >
+          <span class="text-white">calculeaza-ti</span>
+          <span class="text-[rgba(242,245,34,1)]"> sponsorizarea</span>
+        </h2>
+
+        <p
+          class="font-chakra text-gray-300 text-center text-base md:text-lg mb-8 max-w-2xl mx-auto"
+        >
+          Firmele pot redirecționa o parte din impozit către echipa noastră,
+          fără cost real — sunt bani datorați oricum statului. Află în câteva
+          secunde suma maximă pe care o poți direcționa.
+        </p>
+
+        <div
+          class="border-2 border-[rgba(145,67,255,1)] rounded-3xl p-6 md:p-10 bg-[rgba(14,2,31,1)] shadow-[0_0_30px_rgba(145,67,255,0.15)]"
+        >
+          <form
+            id="spons-form"
+            class="flex flex-col gap-5 font-chakra"
+            novalidate
+          >
+            <input
+              id="spons-ca"
+              type="number"
+              min="0"
+              step="any"
+              inputmode="decimal"
+              placeholder="Cifra de afaceri estimată"
+              class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <input
+              id="spons-profit"
+              type="number"
+              min="0"
+              step="any"
+              inputmode="decimal"
+              placeholder="Profit impozabil estimat"
+              class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <div class="flex justify-center mt-2">
+              <button
+                id="spons-btn"
+                type="submit"
+                disabled
+                class="bg-[rgba(242,245,34,1)] text-black font-bold py-3 px-16 rounded-3xl hover:bg-yellow-500 transition shadow-lg text-lg font-chakra uppercase cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-[rgba(242,245,34,1)]"
+              >
+                Cât pot dărui
+              </button>
+            </div>
+          </form>
+
+          <div id="spons-result" class="hidden mt-8 text-center">
+            <p
+              class="font-chakra text-gray-300 text-sm uppercase tracking-wide mb-1"
+            >
+              Suma maximă deductibilă
+            </p>
+            <p
+              id="spons-amount"
+              class="font-robotics text-4xl md:text-5xl text-[rgba(242,245,34,1)] italic"
+            >
+              0 lei
+            </p>
+            <div
+              id="spons-detail"
+              class="mt-4 font-chakra text-gray-400 text-sm leading-relaxed"
+            ></div>
           </div>
         </div>
       </div>
