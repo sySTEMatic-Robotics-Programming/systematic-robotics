@@ -230,3 +230,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
   refreshBtn();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  Array.prototype.forEach.call(
+    document.querySelectorAll("[data-departments]"),
+    function (group) {
+      var form = group.closest("form");
+      if (!form) return;
+
+      var boxes = Array.prototype.slice.call(
+        group.querySelectorAll('input[name="departament"]'),
+      );
+      var error = group.querySelector("[data-departments-error]");
+      if (!boxes.length) return;
+
+      function checkedCount() {
+        return boxes.filter(function (b) {
+          return b.checked;
+        }).length;
+      }
+
+      function sync() {
+        var ok = checkedCount() > 0;
+        if (error) error.classList.toggle("hidden", ok);
+        group.setAttribute("aria-invalid", ok ? "false" : "true");
+        return ok;
+      }
+
+      boxes.forEach(function (b) {
+        b.addEventListener("change", sync);
+      });
+
+      form.addEventListener("submit", function (e) {
+        if (!sync()) {
+          e.preventDefault();
+          boxes[0].focus();
+        }
+      });
+    },
+  );
+});
+
+var TALLY_FORMS = {
+  join: "",
+  partner: "",
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  var ids = Object.keys(TALLY_FORMS).filter(function (key) {
+    return (
+      TALLY_FORMS[key] && document.querySelector('[data-form="' + key + '"]')
+    );
+  });
+  if (!ids.length) return;
+
+  ids.forEach(function (key) {
+    var form = document.querySelector('[data-form="' + key + '"]');
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute(
+      "data-tally-src",
+      "https://tally.so/embed/" +
+        TALLY_FORMS[key] +
+        "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+    );
+    iframe.setAttribute("loading", "lazy");
+    iframe.setAttribute("title", form.getAttribute("data-form") + " form");
+    iframe.width = "100%";
+    iframe.height = "320";
+    iframe.frameBorder = "0";
+    iframe.className = "w-full";
+    form.parentNode.replaceChild(iframe, form);
+  });
+
+  var script = document.createElement("script");
+  script.src = "https://tally.so/widgets/embed.js";
+  document.body.appendChild(script);
+});

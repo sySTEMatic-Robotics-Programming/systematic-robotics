@@ -96,7 +96,7 @@
       }
     </script> -->
 
-    <script src="js/site.js?v=3"></script>
+    <script src="js/site.js?v=4"></script>
   </head>
 
   <body class="bg-[rgba(14,2,31,1)] overflow-x-hidden">
@@ -334,22 +334,59 @@
       </div>
     </div>
 
-    <div class="relative w-full h-screen">
-      <img
-        src="poze/Rectangle1.webp"
-        class="w-full h-full"
-        alt="Background Image"
-      />
+    <header
+      class="relative w-full h-screen overflow-hidden bg-[rgba(14,2,31,1)]"
+    >
+      <picture>
+        <source
+          media="(max-aspect-ratio: 1/1)"
+          type="image/webp"
+          srcset="
+            poze/hero/hero-portrait-640w.webp 640w,
+            poze/hero/hero-portrait-900w.webp 900w
+          "
+          sizes="100vw"
+          width="900"
+          height="2000"
+        />
+        <img
+          src="poze/hero/hero-1600w.webp"
+          srcset="
+            poze/hero/hero-800w.webp   800w,
+            poze/hero/hero-1200w.webp 1200w,
+            poze/hero/hero-1600w.webp 1600w
+          "
+          sizes="100vw"
+          width="1600"
+          height="1230"
+          fetchpriority="high"
+          decoding="async"
+          alt="Echipa sySTEMatic Robotics pe scena la festivitatea de deschidere a anului universitar 2025-2026 a Facultatii de Inginerie Industriala si Robotica, Politehnica Bucuresti"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </picture>
 
-      <div class="absolute inset-0 flex items-center justify-center">
+      <div
+        class="absolute inset-0 bg-[rgba(14,2,31,0.22)] pointer-events-none"
+      ></div>
+      <div
+        class="absolute inset-0 pointer-events-none bg-[linear-gradient(to_bottom,rgba(14,2,31,0.95)_0%,rgba(14,2,31,0.82)_30%,rgba(14,2,31,0.12)_50%,rgba(14,2,31,0.06)_86%,rgba(14,2,31,1)_100%)]"
+      ></div>
+      <div
+        class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,rgba(123,40,243,0.12)_0%,rgba(123,40,243,0)_55%),radial-gradient(ellipse_at_center,rgba(0,0,0,0)_50%,rgba(14,2,31,0.42)_100%)]"
+      ></div>
+
+      <div
+        class="absolute inset-x-0 top-[17%] md:top-24 -translate-y-1/2 md:translate-y-0 z-10 px-4 text-center"
+      >
         <h1
-          class="absolute font-robotics text-5xl md:text-7xl lg:text-9xl text-center flex flex-col items-center leading-none"
+          class="font-robotics text-5xl md:text-7xl lg:text-9xl flex flex-col items-center leading-none drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]"
         >
           <span class="text-[rgba(255,255,255,1)]">Magie reala</span>
           <span class="text-[rgba(145,67,255,1)]">reimaginata</span>
         </h1>
       </div>
-    </div>
+    </header>
 
     <div class="h-16 md:h-32"></div>
 
@@ -1712,6 +1749,7 @@
           <form
             action="https://formsubmit.co/robofiir@gmail.com"
             method="POST"
+            data-form="join"
             class="w-full flex flex-col gap-5 font-chakra"
           >
             <input type="hidden" name="_subject" value="Aplicație Nouă" />
@@ -1733,7 +1771,7 @@
               />
             </div>
             <input
-              type="phone"
+              type="tel"
               name="phone"
               placeholder="Număr de telefon"
               required
@@ -1754,34 +1792,80 @@
               class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
             />
 
-            <div class="relative">
-              <select
-                name="departament"
-                required
-                class="w-full bg-gray-300 p-4 rounded-md text-black font-bold appearance-none outline-none focus:ring-2 focus:ring-purple-500 cursor-pointer"
-              >
-                <option value="" disabled selected>Alege departamentul*</option>
-                <option value="Mechanics">Mecanică</option>
-                <option value="Programming">Programare</option>
-                <option value="CAD / CAE">CAD / CAE</option>
-                <option value="PR">PR</option>
-                <option value="Design">Design</option>
-              </select>
-
-              <div
-                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black"
-              >
-                <svg
-                  class="fill-current h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+            <fieldset data-departments class="w-full">
+              <legend class="font-chakra text-white font-bold mb-3">
+                Alege departamentul (sau departamentele)*
+              </legend>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <label class="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="departament"
+                    value="Mechanics"
+                    class="peer sr-only"
                   />
-                </svg>
+                  <span
+                    class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition peer-hover:bg-gray-200 peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-focus-visible:ring-2 peer-focus-visible:ring-purple-500"
+                    >Mecanică</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="departament"
+                    value="Programming"
+                    class="peer sr-only"
+                  />
+                  <span
+                    class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition peer-hover:bg-gray-200 peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-focus-visible:ring-2 peer-focus-visible:ring-purple-500"
+                    >Programare</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="departament"
+                    value="CAD / CAE"
+                    class="peer sr-only"
+                  />
+                  <span
+                    class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition peer-hover:bg-gray-200 peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-focus-visible:ring-2 peer-focus-visible:ring-purple-500"
+                    >CAD / CAE</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="departament"
+                    value="PR"
+                    class="peer sr-only"
+                  />
+                  <span
+                    class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition peer-hover:bg-gray-200 peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-focus-visible:ring-2 peer-focus-visible:ring-purple-500"
+                    >PR</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="departament"
+                    value="Design"
+                    class="peer sr-only"
+                  />
+                  <span
+                    class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition peer-hover:bg-gray-200 peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-focus-visible:ring-2 peer-focus-visible:ring-purple-500"
+                    >Design</span
+                  >
+                </label>
               </div>
-            </div>
+              <p
+                data-departments-error
+                role="alert"
+                class="hidden font-chakra text-[rgba(242,245,34,1)] text-sm mt-3"
+              >
+                Te rugăm să alegi cel puțin un departament.
+              </p>
+            </fieldset>
 
             <div class="flex justify-center mt-6">
               <button
@@ -1899,6 +1983,7 @@
             <form
               action="https://formsubmit.co/robofiir@gmail.com"
               method="POST"
+              data-form="partner"
               class="w-full flex flex-col gap-4 font-chakra"
             >
               <input type="hidden" name="_subject" value="Parteneriat Nou" />
@@ -1958,7 +2043,10 @@
 
     <div class="h-40"></div>
 
-    <section id="sponsorizare" class="scroll-mt-28 px-4 md:px-20 lg:px-32 mb-20">
+    <section
+      id="sponsorizare"
+      class="scroll-mt-28 px-4 md:px-20 lg:px-32 mb-20"
+    >
       <div class="w-full max-w-3xl mx-auto">
         <h2
           class="font-robotics text-5xl md:text-6xl font-normal mb-4 uppercase italic tracking-wide text-center"
