@@ -306,3 +306,56 @@ document.addEventListener("DOMContentLoaded", function () {
   script.src = "https://tally.so/widgets/embed.js";
   document.body.appendChild(script);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var host = document.querySelector("[data-lazy-src]");
+  if (!host) return;
+
+  var loaded = false;
+  function load() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement("script");
+    s.src = host.getAttribute("data-lazy-src");
+    document.body.appendChild(s);
+  }
+
+  if (!("IntersectionObserver" in window)) return load();
+
+  var io = new IntersectionObserver(
+    function (entries) {
+      if (entries[0].isIntersecting) {
+        io.disconnect();
+        load();
+      }
+    },
+    { rootMargin: "600px" },
+  );
+  io.observe(host);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var btn = document.getElementById("hamburger-btn");
+  var menu = document.getElementById("mobile-menu");
+  if (!btn || !menu) return;
+
+  function setOpen(open) {
+    menu.classList.toggle("hidden", !open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  btn.addEventListener("click", function () {
+    setOpen(menu.classList.contains("hidden"));
+  });
+
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) setOpen(false);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !menu.classList.contains("hidden")) {
+      setOpen(false);
+      btn.focus();
+    }
+  });
+});
