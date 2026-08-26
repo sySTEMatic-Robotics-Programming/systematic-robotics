@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /poze/_unused/
+
+Sitemap: https://systematicrobotics.ro/sitemap.xml

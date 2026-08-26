@@ -3,52 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sySTEMatic Robotics</title>
+    <title>sySTEMatic Robotics | Echipă de Robotică Politehnica București</title>
     <meta
       name="description"
-      content="sySTEMatic Robotics este o echipă de robotică cu peste 70 de membri de la Politehnica București, care concurează internațional în competiții de Sumo, Line Follower și Freestyle."
+      content="sySTEMatic Robotics este o echipă de robotică studențească cu peste 70 de membri de la Politehnica București, care concurează internațional la Sumo, Line Follower și Freestyle din 2023."
     />
-    <meta name="robots" content="index, follow" />
-    <!-- <link rel="canonical" href="https://systeamtics-robotics.ro/ro.html" />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://systeamtics-robotics.ro/"
+    <meta name="author" content="sySTEMatic Robotics" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
+    <meta name="theme-color" content="#0E021F" />
+    <link rel="canonical" href="https://systematicrobotics.ro/ro.html" />
+    <link rel="alternate" hreflang="en" href="https://systematicrobotics.ro/" />
     <link
       rel="alternate"
       hreflang="ro"
-      href="https://systematics-robotics.ro/ro.html"
-    /> -->
+      href="https://systematicrobotics.ro/ro.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://systematicrobotics.ro/"
+    />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="sySTEMatic Robotics" />
+    <meta
+      property="og:title"
+      content="sySTEMatic Robotics | Echipă de Robotică Politehnica București"
+    />
     <meta
       property="og:description"
       content="Peste 70 de studenți de la Politehnica București construiesc roboți premiați pentru competiții internaționale în China, Grecia, Japonia și România."
     />
-    <!-- <meta property="og:url" content="https://systematics-robotics.ro/ro.html" /> -->
-    <!-- <meta
+    <meta property="og:url" content="https://systematicrobotics.ro/ro.html" />
+    <meta
       property="og:image"
-      content="https://systematics-robotics.ro/poze/sigla.png"
-    /> -->
+      content="https://systematicrobotics.ro/poze/og-image.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://systematicrobotics.ro/poze/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sigla echipei sySTEMatic Robotics"
+    />
     <meta property="og:site_name" content="sySTEMatic Robotics" />
     <meta property="og:locale" content="ro_RO" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="sySTEMatic Robotics" />
+    <meta
+      name="twitter:title"
+      content="sySTEMatic Robotics | Echipă de Robotică Politehnica București"
+    />
     <meta
       name="twitter:description"
       content="Peste 70 de studenți de la Politehnica București construiesc roboți premiați pentru competiții internaționale."
     />
-    <!-- <meta
+    <meta
       name="twitter:image"
-      content="https://systematics-robotics.ro/poze/sigla.png"
-    /> -->
+      content="https://systematicrobotics.ro/poze/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Sigla echipei sySTEMatic Robotics"
+    />
 
     <link rel="stylesheet" href="code.css" />
-    <link rel="icon" type="image/webp" href="poze/sigla.webp" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="sySTEMatic Robotics" />
+    <link rel="manifest" href="/site.webmanifest" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,28 +105,55 @@
       }
     </style>
 
-    <!-- <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "sySTEMatic Robotics",
-        "url": "https://systematics-robotics.ro",
-        "logo": "https://systematics-robotics.ro/poze/sigla.png",
-        "description": "Echipă de robotică de la Facultatea de Inginerie Industrială și Robotică, Politehnica București, care concurează internațional din 2023.",
-        "foundingDate": "2023-11",
-        "email": "pr.systematic23@gmail.com",
-        "sameAs": [
-          "https://www.facebook.com/profile.php?id=61553168963681",
-          "https://www.instagram.com/systematic_robotics/",
-          "https://www.tiktok.com/@systematic_robotics",
-          "https://www.linkedin.com/company/systematic-robotics/"
-        ],
-        "memberOf": {
-          "@type": "EducationalOrganization",
-          "name": "National University of Science and Technology Politehnica Bucharest"
-        }
+        "@graph": [
+          {
+            "@type": ["Organization", "SportsTeam"],
+            "@id": "https://systematicrobotics.ro/#organization",
+            "name": "sySTEMatic Robotics",
+            "alternateName": "RoboFIIR",
+            "url": "https://systematicrobotics.ro/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://systematicrobotics.ro/poze/og-image.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "image": "https://systematicrobotics.ro/poze/og-image.jpg",
+            "description": "Student robotics team from the Faculty of Industrial Engineering and Robotics at Politehnica Bucharest, competing internationally in Sumo, Line Follower and Freestyle since 2023.",
+            "foundingDate": "2023-11",
+            "email": "pr.systematic23@gmail.com",
+            "telephone": "+40724021088",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bucharest",
+              "addressCountry": "RO"
+            },
+            "sameAs": [
+              "https://www.facebook.com/profile.php?id=61553168963681",
+              "https://www.instagram.com/systematic_robotics/",
+              "https://www.tiktok.com/@systematic_robotics",
+              "https://www.linkedin.com/company/systematic-robotics/"
+            ],
+            "memberOf": {
+              "@type": "EducationalOrganization",
+              "name": "National University of Science and Technology Politehnica Bucharest",
+              "url": "https://upb.ro/"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://systematicrobotics.ro/#website",
+            "url": "https://systematicrobotics.ro/",
+            "name": "sySTEMatic Robotics",
+            "publisher": { "@id": "https://systematicrobotics.ro/#organization" },
+            "inLanguage": ["en", "ro"]
+          }
+        ]
       }
-    </script> -->
+    </script>
 
     <script src="js/site.js?v=4"></script>
   </head>
@@ -104,7 +163,7 @@
       class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 md:px-14 py-3 md:py-4 bg-[rgba(14,2,31,0.95)] backdrop-blur-md border-b border-white/10"
     >
       <a href="#">
-        <img src="poze/sigla.webp" class="h-10 md:h-12 w-auto" />
+        <img src="poze/sigla.webp" alt="Sigla sySTEMatic Robotics" width="94" height="94" class="h-10 md:h-12 w-auto" />
       </a>
       <!-- Desktop nav links -->
       <div
@@ -382,6 +441,10 @@
         <h1
           class="font-robotics text-5xl md:text-7xl lg:text-9xl flex flex-col items-center leading-none drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)]"
         >
+          <span class="sr-only"
+            >sySTEMatic Robotics — echipă de robotică studențească la Politehnica
+            București.</span
+          >
           <span class="text-[rgba(255,255,255,1)]">Magie reala</span>
           <span class="text-[rgba(145,67,255,1)]">reimaginata</span>
         </h1>
@@ -490,12 +553,12 @@
       <div
         class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
       >
-        <h1
+        <h2
           class="font-robotics flex flex-row items-center justify-center gap-3 text-4xl md:text-6xl lg:text-8xl"
         >
           <span class="text-[rgba(242,245,34,1)]">Echipa de</span>
           <span class="text-[rgba(255,255,255,1)]">conducere</span>
-        </h1>
+        </h2>
         <p
           class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
         >
@@ -574,12 +637,12 @@
       <div
         class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
       >
-        <h1
+        <h2
           class="font-robotics flex flex-row items-center justify-center gap-3 text-3xl md:text-5xl lg:text-6xl"
         >
           <span class="text-[rgba(242,245,34,1)]">Departamentul</span>
           <span class="text-[rgba(255,255,255,1)]">tehnic</span>
-        </h1>
+        </h2>
         <p
           class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
         >
@@ -663,14 +726,14 @@
       <div
         class="flex flex-col items-center justify-center gap-5 mb-10 md:mb-29 px-4 md:px-8"
       >
-        <h1
+        <h2
           class="font-robotics flex flex-row items-center justify-center gap-3 text-3xl md:text-5xl lg:text-6xl text-center"
         >
           <span class="text-[rgba(242,245,34,1)]"
             ><span class="text-white">non</span>Tehnic</span
           >
           <span class="text-[rgba(255,255,255,1)]">departament</span>
-        </h1>
+        </h2>
         <p
           class="text-white font-chakra text-center max-w-4xl w-full text-sm md:text-base"
         >
@@ -1205,12 +1268,12 @@
       <div
         class="flex flex-col items-center justify-center gap-3 sm:gap-5 mb-12 sm:mb-20 px-4"
       >
-        <h1
+        <h2
           class="font-robotics flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-4xl sm:text-6xl text-center"
         >
           <span class="text-[rgba(242,245,34,1)]">APARITII</span>
           <span class="text-[rgba(255,255,255,1)]">TV</span>
-        </h1>
+        </h2>
       </div>
 
       <div
