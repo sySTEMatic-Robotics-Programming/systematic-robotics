@@ -1,3 +1,4 @@
+// doamne ce as vrea sa am typescript aici... ANY ANY ANY ANY ANY ANY ANY ANY ANY var var var var
 document.addEventListener("DOMContentLoaded", function () {
   var navLinks = Array.from(
     document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]'),
@@ -308,30 +309,80 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  var host = document.querySelector("[data-lazy-src]");
-  if (!host) return;
+  Array.prototype.forEach.call(
+    document.querySelectorAll("[data-lazy-src]"),
+    function (host) {
+      var loaded = false;
+      function load() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement("script");
+        s.src = host.getAttribute("data-lazy-src");
+        document.body.appendChild(s);
+      }
 
-  var loaded = false;
-  function load() {
-    if (loaded) return;
-    loaded = true;
-    var s = document.createElement("script");
-    s.src = host.getAttribute("data-lazy-src");
-    document.body.appendChild(s);
+      if (!("IntersectionObserver" in window)) return load();
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting) {
+            io.disconnect();
+            load();
+          }
+        },
+        { rootMargin: "600px" },
+      );
+      io.observe(host);
+    },
+  );
+});
+
+// Join us form -> Cloudflare Worker (worker/join.js) -> Resend emails.
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.querySelector('form[data-form="join"]');
+  if (!form) return;
+
+  var button = form.querySelector('button[type="submit"]');
+  var status = form.querySelector("[data-join-status]");
+  var lang = document.documentElement.lang;
+  var ro = lang === "ro";
+
+  function show(text) {
+    status.textContent = text;
+    status.classList.remove("hidden");
   }
 
-  if (!("IntersectionObserver" in window)) return load();
+  form.addEventListener("submit", function (e) {
+    if (e.defaultPrevented) return;
+    e.preventDefault();
 
-  var io = new IntersectionObserver(
-    function (entries) {
-      if (entries[0].isIntersecting) {
-        io.disconnect();
-        load();
-      }
-    },
-    { rootMargin: "600px" },
-  );
-  io.observe(host);
+    var data = new FormData(form);
+    data.append("lang", lang);
+    button.disabled = true;
+    show(ro ? "Se trimite…" : "Sending…");
+
+    fetch(form.action, { method: "POST", body: data })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        form.reset();
+        show(
+          ro
+            ? "Mulțumim! Verifică-ți e-mailul pentru formularul de recrutare."
+            : "Thank you! Check your inbox for the recruitment form.",
+        );
+      })
+      .catch(function () {
+        show(
+          ro
+            ? "Ceva n-a mers. Verifică datele și încearcă din nou."
+            : "Something went wrong. Check your details and try again.",
+        );
+      })
+      .then(function () {
+        button.disabled = false;
+        if (window.turnstile) window.turnstile.reset();
+      });
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,0 +1,27 @@
+{
+  "name": "systematic-join",
+  "main": "join.js",
+  "compatibility_date": "2026-09-01",
+  "routes": [
+    {
+      "pattern": "systematicrobotics.ro/api/join",
+      "zone_name": "systematicrobotics.ro",
+    },
+  ],
+  "workers_dev": false,
+  "observability": { "enabled": true },
+  "send_email": [
+    {
+      "name": "TEAM_EMAIL",
+      "destination_address": "pr.systematic23@gmail.com",
+    },
+  ],
+  "ratelimits": [
+    // doar 5 cereri per ip pe minut
+    {
+      "name": "RATE_LIMIT",
+      "namespace_id": "1001",
+      "simple": { "limit": 5, "period": 60 },
+    },
+  ],
+}
