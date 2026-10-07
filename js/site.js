@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var href = link.getAttribute("href");
       var isActive = href === "#" + sectionId;
       link.classList.toggle("is-active-section", isActive);
-      if (href === "#join") {
-        link.classList.toggle("is-active-pill", isActive);
-      }
     });
   }
 
@@ -232,48 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   refreshBtn();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  Array.prototype.forEach.call(
-    document.querySelectorAll("[data-departments]"),
-    function (group) {
-      var form = group.closest("form");
-      if (!form) return;
-
-      var boxes = Array.prototype.slice.call(
-        group.querySelectorAll('input[name="departament"]'),
-      );
-      var error = group.querySelector("[data-departments-error]");
-      if (!boxes.length) return;
-
-      function checkedCount() {
-        return boxes.filter(function (b) {
-          return b.checked;
-        }).length;
-      }
-
-      function sync() {
-        var ok = checkedCount() > 0;
-        if (error) error.classList.toggle("hidden", ok);
-        group.setAttribute("aria-invalid", ok ? "false" : "true");
-        return ok;
-      }
-
-      boxes.forEach(function (b) {
-        b.addEventListener("change", sync);
-      });
-
-      form.addEventListener("submit", function (e) {
-        if (!sync()) {
-          e.preventDefault();
-          boxes[0].focus();
-        }
-      });
-    },
-  );
-});
-
 var TALLY_FORMS = {
-  join: "",
   partner: "",
 };
 
@@ -335,54 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
       io.observe(host);
     },
   );
-});
-
-// Join us form -> Cloudflare Worker (worker/join.js) -> Resend emails.
-document.addEventListener("DOMContentLoaded", function () {
-  var form = document.querySelector('form[data-form="join"]');
-  if (!form) return;
-
-  var button = form.querySelector('button[type="submit"]');
-  var status = form.querySelector("[data-join-status]");
-  var lang = document.documentElement.lang;
-  var ro = lang === "ro";
-
-  function show(text) {
-    status.textContent = text;
-    status.classList.remove("hidden");
-  }
-
-  form.addEventListener("submit", function (e) {
-    if (e.defaultPrevented) return;
-    e.preventDefault();
-
-    var data = new FormData(form);
-    data.append("lang", lang);
-    button.disabled = true;
-    show(ro ? "Se trimite…" : "Sending…");
-
-    fetch(form.action, { method: "POST", body: data })
-      .then(function (res) {
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        form.reset();
-        show(
-          ro
-            ? "Mulțumim! Verifică-ți e-mailul pentru formularul de recrutare."
-            : "Thank you! Check your inbox for the recruitment form.",
-        );
-      })
-      .catch(function () {
-        show(
-          ro
-            ? "Ceva n-a mers. Verifică datele și încearcă din nou."
-            : "Something went wrong. Check your details and try again.",
-        );
-      })
-      .then(function () {
-        button.disabled = false;
-        if (window.turnstile) window.turnstile.reset();
-      });
-  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {

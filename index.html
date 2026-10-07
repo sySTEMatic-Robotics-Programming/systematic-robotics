@@ -216,12 +216,6 @@
         >
           Sponsorship
         </a>
-        <a
-          href="#join"
-          class="bg-[rgba(123,40,243,0.33)] py-2 px-5 rounded-2xl hover:bg-[rgba(123,40,243,0.6)] transition cursor-pointer"
-        >
-          Join Us
-        </a>
       </div>
       <div class="flex items-center gap-4">
         <div class="text-white hidden lg:flex gap-2 items-center">
@@ -330,11 +324,6 @@
           href="#sponsorship"
           class="text-white hover:text-[rgba(242,245,34,1)] transition"
           >Sponsorship</a
-        >
-        <a
-          href="#join"
-          class="bg-[rgba(123,40,243,0.33)] py-2 px-8 rounded-2xl hover:bg-[rgba(123,40,243,0.6)] transition text-white"
-          >Join Us</a
         >
         <div class="text-white flex gap-3 items-center mt-2">
           <a
@@ -1855,179 +1844,6 @@
         </div>
       </section>
 
-      <section id="join" class="scroll-mt-28">
-        <div
-          class="w-full max-w-3xl mx-auto p-1 bg-[rgba(14,2,31,1)] mt-20 md:mt-60 px-4 md:px-0"
-        >
-          <div
-            class="border-2 border-[rgba(145,67,255,1)] rounded-3xl p-6 md:p-12 flex flex-col items-center"
-          >
-            <h2
-              class="font-robotics text-4xl md:text-6xl lg:text-7xl font-normal mb-2 uppercase italic tracking-wide"
-            >
-              <span class="text-white">Join</span>
-              <span class="text-[rgba(242,245,34,1)]">us</span>
-            </h2>
-            <p
-              class="font-chakra text-white text-center mb-10 text-sm md:text-base"
-            >
-              Enter your information, and we'll reach out with
-              <span class="text-[rgba(242,245,34,1)] font-bold"
-                >the recruitment form.</span
-              >
-            </p>
-            <form
-              action="/api/join"
-              method="POST"
-              data-form="join"
-              class="w-full flex flex-col gap-5 font-chakra"
-            >
-              <input
-                type="text"
-                name="website"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true"
-                class="sr-only"
-              />
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <input
-                  type="text"
-                  name="Prenume"
-                  placeholder="First Name*"
-                  required
-                  class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <input
-                  type="text"
-                  name="Nume"
-                  placeholder="Last Name*"
-                  required
-                  class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone-Number"
-                required
-                class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="e-mail*"
-                required
-                class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
-              />
-              <input
-                type="text"
-                name="universitate"
-                placeholder="University and Domain*"
-                required
-                class="w-full bg-gray-300 p-4 rounded-md placeholder-black font-bold outline-none focus:ring-2 focus:ring-purple-500"
-              />
-
-              <fieldset data-departments class="w-full">
-                <legend class="font-chakra text-white font-bold mb-3">
-                  Choose your department(s)*
-                </legend>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="departament"
-                      value="Mechanics"
-                      class="peer sr-only"
-                    />
-                    <span
-                      class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition duration-150 ring-2 ring-transparent peer-hover:ring-[rgba(145,67,255,1)] peer-hover:-translate-y-0.5 peer-hover:shadow-[0_6px_18px_rgba(145,67,255,0.35)] peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-checked:peer-hover:shadow-[0_6px_22px_rgba(242,245,34,0.5)] peer-focus-visible:ring-purple-500"
-                      >Mechanics</span
-                    >
-                  </label>
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="departament"
-                      value="Programming"
-                      class="peer sr-only"
-                    />
-                    <span
-                      class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition duration-150 ring-2 ring-transparent peer-hover:ring-[rgba(145,67,255,1)] peer-hover:-translate-y-0.5 peer-hover:shadow-[0_6px_18px_rgba(145,67,255,0.35)] peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-checked:peer-hover:shadow-[0_6px_22px_rgba(242,245,34,0.5)] peer-focus-visible:ring-purple-500"
-                      >Programming</span
-                    >
-                  </label>
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="departament"
-                      value="CAD / CAE"
-                      class="peer sr-only"
-                    />
-                    <span
-                      class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition duration-150 ring-2 ring-transparent peer-hover:ring-[rgba(145,67,255,1)] peer-hover:-translate-y-0.5 peer-hover:shadow-[0_6px_18px_rgba(145,67,255,0.35)] peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-checked:peer-hover:shadow-[0_6px_22px_rgba(242,245,34,0.5)] peer-focus-visible:ring-purple-500"
-                      >CAD / CAE</span
-                    >
-                  </label>
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="departament"
-                      value="PR"
-                      class="peer sr-only"
-                    />
-                    <span
-                      class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition duration-150 ring-2 ring-transparent peer-hover:ring-[rgba(145,67,255,1)] peer-hover:-translate-y-0.5 peer-hover:shadow-[0_6px_18px_rgba(145,67,255,0.35)] peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-checked:peer-hover:shadow-[0_6px_22px_rgba(242,245,34,0.5)] peer-focus-visible:ring-purple-500"
-                      >PR</span
-                    >
-                  </label>
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      name="departament"
-                      value="Design"
-                      class="peer sr-only"
-                    />
-                    <span
-                      class="block w-full text-center bg-gray-300 text-black font-bold px-3 py-3 rounded-md select-none transition duration-150 ring-2 ring-transparent peer-hover:ring-[rgba(145,67,255,1)] peer-hover:-translate-y-0.5 peer-hover:shadow-[0_6px_18px_rgba(145,67,255,0.35)] peer-checked:bg-[rgba(242,245,34,1)] peer-checked:shadow-[0_0_18px_rgba(242,245,34,0.35)] peer-checked:peer-hover:shadow-[0_6px_22px_rgba(242,245,34,0.5)] peer-focus-visible:ring-purple-500"
-                      >Design</span
-                    >
-                  </label>
-                </div>
-                <p
-                  data-departments-error
-                  role="alert"
-                  class="hidden font-chakra text-[rgba(242,245,34,1)] text-sm mt-3"
-                >
-                  Please select at least one department.
-                </p>
-              </fieldset>
-
-              <div
-                class="cf-turnstile flex justify-center"
-                data-sitekey="0x4AAAAAAE5T5jM5xZv8D5S4"
-                data-theme="dark"
-                data-appearance="interaction-only"
-                data-lazy-src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-              ></div>
-
-              <div class="flex justify-center mt-2">
-                <button
-                  type="submit"
-                  class="bg-[rgba(242,245,34,1)] text-black font-bold py-3 px-16 rounded-3xl hover:bg-yellow-500 transition shadow-lg text-lg font-chakra uppercase cursor-pointer"
-                >
-                  Send
-                </button>
-              </div>
-              <p
-                data-join-status
-                role="alert"
-                class="hidden font-chakra text-center text-[rgba(242,245,34,1)]"
-              ></p>
-            </form>
-          </div>
-        </div>
-      </section>
 
       <div class="h-40"></div>
 
